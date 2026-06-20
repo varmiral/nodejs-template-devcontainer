@@ -1,0 +1,8 @@
+{
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "prettier.configPath": ".prettierrc",
+  "[javascript][typescript][json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}

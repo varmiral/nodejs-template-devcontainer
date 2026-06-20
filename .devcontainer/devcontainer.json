@@ -1,0 +1,37 @@
+{
+  "image": "varmiral/nodejs-dev:trixie",
+  // "build": {
+  //   "dockerfile": "Dockerfile",
+  //   "target": "development"
+  // },
+  "initializeCommand": [
+    "bash",
+    ".devcontainer/build-devcontainer.sh",
+    "varmiral/nodejs-dev:trixie"
+  ],
+  "runArgs": ["--name", "${localWorkspaceFolderBasename}"],
+  "updateRemoteUserUID": false,
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "HISTCONTROL": "ignoreboth",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "vitest.explorer"
+      ]
+    }
+  },
+  "mounts": [
+    {
+      "source": "npm-cache-devcontainer",
+      "target": "/home/vscode/.npm",
+      "type": "volume"
+    }
+  ]
+}
